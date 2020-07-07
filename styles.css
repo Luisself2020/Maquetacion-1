@@ -1,0 +1,428 @@
+/*FUENTES -- ?#efix supuestamente arregla la vizualizacion de las fuentes en la web*/
+
+@font-face {
+    font-family: "navis";
+    src: url("fonts/nevis.eot");
+    src: url("fonts/nevis.eot?#efix") format("embedded-opentype"),
+     url("fonts/nevis.woff") format("woff"),
+     url("fonts/nevis.ttf") format("truetype"),
+     url("fonts/nevis.svg") format("svg"); 
+     
+     /*truetype=normal*/
+     
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "fajala";
+    src: url("font/FjallaOne-Regular.ttf") format('truetype');    
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "icons";
+    src: url("fonts/websymbols-regular-webfont.svg#symbolsRegular") format("svg")
+    url("fonts/websymbols-regular-webfont.eot");
+    src: url("fonts/websymbols-regular-webfont.eot#iefix") format("embedded-opentype"),
+     url("fonts/websymbols-regular-webfont.woff") format("woff"),
+     url("fonts/websymbols-regular-webfont.ttf") format("truetype");      /*truetype=normal*/
+    
+     font-weight: normal;
+     font-style: normal;
+
+}
+
+
+/*ESTILOS GENERALES*/
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    background-image: url("../img/paven.png");
+}
+
+a{
+    color: #529125;
+    text-decoration: none;
+}
+
+a:visited{
+    color: #529125;
+}
+
+a:hover{
+    color: #285616;
+}
+
+.red{
+    color: #9b2422 !important;
+}
+
+.blue{
+    color: #0c73f2 !important;
+}
+
+.orange{
+    color: #d69d2a !important;
+}
+
+.icon{
+    font-family: "icons";
+    float: left;
+    margin-right: auto;
+}
+
+.clearfix{ /*mandamos el ver historico de noticias al final de la pag */
+    float: none;
+    clear: both;
+}
+
+/*FORMULARIOS*/
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select{
+    border: 1px sold #c9c9c9;
+    box-shadow: 0px 0px 2px #ccc;
+    background: white;
+    padding: 1px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    color: gray;
+    transition: all 300ms; /*all por que va a afectar a todas propiedades*/
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus{ /*focus coloca el color sobre el borde de cada formulario*/
+    border: 1px solid #70b231;
+    color: black;
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+button{ /*al boton enviar se le añadiran estilos*/
+    display: block;
+    border-radius: 2px;
+    border: 1px solid green;
+    width: 60px;
+    padding: 3px;
+    background-color: #70b231;
+    cursor: pointer;
+}
+
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+button:hover{
+    box-shadow: 0px 0px 2px gray; /*al boton se ilumina un poquito*/
+
+}
+
+input[type="button"]:active,
+input[type="submit"]:active,
+input[type="reset"]:active,
+button:active{ /*causa un efecto cuando este pulsando el boton*/
+    box-shadow: 0px 0px 3px gray inset;/*insect es dentro de la sombra, boton*/
+    text-shadow: 0px 0px 1px #ccc;
+}
+
+
+/*CABECERA*/
+
+#header{
+    min-width: 1024px;
+    width: 100%;
+    height: 250px;
+    margin: 0px auto;
+}
+
+#header a{
+    text-decoration: none;
+}
+
+#header #logotipo{
+    width: 570px;
+    margin: 0px auto;
+    padding-top: 20px;
+}
+
+#header #logotipo img{
+    display: block;
+    text-align: center;
+    margin: 0px auto;
+    width: 140px;
+}
+
+#header h1 {
+    text-align: center;
+    font-size: 40px;
+    font-family: "nevis";
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-top: 10px;
+    text-shadow: 0px 2px 1px #333333; /* text-shadow: es efecto tridimencional al texto MASTER EN CSS*/
+    transition: all 300ms;
+}
+
+#header h1:hover{ /* para darle otro efecto a la cabecera, cuando el raton se acerca esta hace un efecto*/
+    text-shadow: 0px 2px 1px #333333, 0px 0px 4px #70b231;
+}
+
+#header h1 a {
+   color: #70b231;
+}
+
+/*BARRA DE NAVEGACION*/
+#nav{
+    width: 100%;
+    height: 40px;
+    background-color: #181717;
+    color: white;
+    font-family: sans-serif, Helvetica, Arial;
+    font-size: 14px;
+    box-shadow: 0px 0px 2px grey;
+}
+
+#nav ul {
+    list-style: none;
+    text-decoration: none;
+    margin: 0px auto;
+    width: 1130px;
+}
+
+#nav > ul > li {
+    line-height: 40px;
+    float:left;
+    border-right: 1px solid gray; /* borde en forma paralela*/
+    transition: all 300ms;
+
+}
+
+#nav > ul > li a {
+    display: block;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white; 
+    text-decoration: none;
+}
+
+#nav > ul > li > a:first-child{ /* coloca el borde en el INICIO Y CONTACTO, es decir los ultimos*/
+    border-left: 1px solid gray;
+}
+
+#nav > ul > li:hover{
+    background-color: #70b231;
+    box-shadow: 0px 0px 4px green inset; /* inset sombra interior dentro del elemento*/
+}
+
+/*MENU DESPLEGABLE*/
+
+#nav > ul > li > ul { /* primer hijo ul que tiene dentro el nav, el primero hijo li que tiene dentro el ul (nav), el primer hijo ul que tiene dentro del li*/
+
+    display: none; /* display: none es como no permite hacer nada,se comporta como un bloque, por lo que el html se oculta*/
+    position: absolute; /*poner un posicion absoluta, es decir que no desfigure la estructura del sitio web, simplemente que sobresalga cuando tenga que hacerlo y ya.*/
+     /*color: white;color del texto en la barra*/
+     /*text-align: left; para que los elementos esten a la izquierda-left*/
+    width: 160px; /*tamaño*/
+    box-shadow: 0px 2px 2px gray; /* movimiento de la sombra hacia abajo, 2px disfuminado color de sombre es gray*/
+    z-index: 1; /* z-index: 1; para que se destaque sobre los elementos, asi estara por encima del resto de los elementos, es decir se superponga*/
+    /*no pasa nada xq esta en display: none; pero se guardan los cambios */
+}
+
+#nav > ul > li:hover >ul{
+    display: block; /*display: block; permite efectuar los cambios sobre la barra, se puede decir lo contrario de del none;*/
+}
+
+#nav > ul > li:hover >ul > li{
+    background-color: #F2F1F0;
+    border-bottom: 1px solid #D6D6D6;
+    padding: 8px; /*Añade separacion a los elementos*/
+    line-height: 25px; /* Para centrar verticalmente*/
+    font-size: 13px; /* para colocar las letras un poco mas pequeñas q las de la barra*/
+    transition: all 300ms; /*ms es milisegundo*/
+}
+
+#nav > ul > li:hover >ul > li > a{ /*hover: una pseudoclase*/
+    color: #666666;
+}
+
+#nav > ul > li:hover >ul > li:hover{
+   /* box-shadow: 0px 0px 6px #CCC inset; para sombrear cuando pasas el raton por la barra nueva q se muestra*/
+    background: rgb(231, 228, 228); /*hace lo mismo, es opcional*/
+}
+
+/*CONTENIDO*/
+
+#content {
+    font-family: sans-serif, Arial, Helvetica;
+    width: 1250px;
+    min-height: 1100px; /*Altura minima*/
+    margin: 0px auto;
+}
+
+/*BARRA LATERAL*/
+
+#aside, #frase{
+    width: 200px;
+    float:left; /*Caja flotada a la izquierda*/
+    margin: 30px;
+    background-color: white;
+    border: 1px solid auto; 
+    box-shadow: 0px 2px 2px #ccc; /*eje x, 0px sombreado en lacaja a la derecha eje y, 2px sombreado abajo de la caja, 2px sombreado alrededor dela caja */
+    font-family: sans-serif Arial, Helvetica;
+}
+
+#frase{
+    /*clear: both;  con el clear: both bajamos la frase al final de los enlaces, si no le colocas el clear: borth los enlaces al flotarse los 2 a la izquierda es colocarse uno al lado del otro ya que son posiciones relativas y trabajaran de esa manera, como el navegador le dice*/
+    width: 180px;
+    padding: 10px;
+    font-size: 14px;
+    font-family: sans-serif;
+}
+
+#aside .widget{
+    display: block;
+    width: 180px;
+    margin: 5px auto;
+    padding: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 14px;
+    border-bottom: 1px dashed #333333;
+}
+
+#aside .widget:last-child{ /*es un margen de ultimo en la caja*/
+    margin-bottom: 20px;
+}
+
+#aside h3{
+    display: block;
+    width: 100%;
+    color: #333333;
+    text-align: center;
+    padding-top: 2px;/* pequeño margen en el texto*/
+    padding-bottom: 2px; /*pequeño margen dentro del texto  */
+    margin-bottom: 15px; /*margen inferior entre los widget(header)*/
+    background: #f2f3f2;
+    border: 1px solid #ccc;
+    border-left: none; /*le agrega un borde al texto dentro de la caja*/
+    border-right: none;    
+}
+
+#aside li{
+    margin-top: 8px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    list-style: square; /*con el list-style: square(cuadrado) le damos efecto a los enlaces en ENLACES DE INTERES*/
+}
+
+/* FORMULARIOS BARRA LATERAL */
+/*div es lo mismo que utilizar widget*/
+
+#aside div label,
+#aside div input[type="text"],
+#aside div label[type="email"],
+#aside div label[type="password"],
+#aside div a{
+    display: block;
+    width: 95%;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+#aside div input[type="button"],
+#aside div input[type="submit"],
+#aside div button{ /*button es una etiqueta en HTML5*/
+
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+#aside input,
+#aside label{
+    margin: 0px auto; /*Para centrar los elementos*/
+    text-align: center; /*Para centrar el texto */
+}
+
+/*SECCIONES*/
+
+#sections{
+    float: right; /*float = mover right = derecha*/
+    width: 75%; /*tamaño*/
+    font-family: sans-serif, Arial, Helvetica;
+    margin-right: 20px; /*margen a la derecha*/
+}
+
+#sections .titulo{
+    font-family: "fajala";
+    font-size: 24px;
+    font-weight: normal;
+    margin-top: -20px;
+    letter-spacing: 1px;/*espacio entre las letras*/
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+#sections section{
+    margin-top: 40px;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 4px #c9c9c9; /*sombra de difuminado*/
+    color: #333333;
+    font-size: 16px;
+    overflow: hidden; /*Todo lo que sobresalga de las secciones que se oculte*/
+}
+
+#sections .article{
+    margin: 10px;
+    margin-top: 20px;/*margen por arriba del texto*/
+    margin-bottom: 20px; /*margen por debajo del texto*/
+}
+
+#sections .date{
+    color: gray;
+    font-size: 14px;
+}
+
+#sections .stickerOne,
+#sections .stickerTwo{
+    position: absolute;
+    margin-top: -38px;
+    z-index: 0;
+}
+
+#sections .stickerTwo{  
+    margin-left: 860px; 
+}
+
+#history{
+    float: right;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+/*PIE DE PAGINA*/
+
+#footer{
+    width: 100%;
+    margin: 0px auto;
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 10px;
+    background-color: #333333;
+    padding-bottom: 10px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 14px;
+    box-shadow: 0px 0px 2px gray;
+}
